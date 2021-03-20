@@ -38,6 +38,7 @@ function playNote(e) {
     audio.play();
 }
 
+//Работа с мышью 
 function playMouse(e){
     const note = e.target;
 
@@ -50,6 +51,7 @@ function playMouse(e){
     }
 }
 
+//Нажатая кнопка мыши
 piano.addEventListener('mousedown', e => {
     playNote(e.target);
     piano.addEventListener('mouseover', playMouse);
@@ -58,6 +60,7 @@ piano.addEventListener('mousedown', e => {
     });
 });
 
+//Удаление класса при отпускании мыши
 piano.addEventListener('mouseup', e => {
     const note = e.target;
     if(note.classList.contains('piano-key-active')){
@@ -65,6 +68,7 @@ piano.addEventListener('mouseup', e => {
     }
 });
 
+//Объект с названием нот и клавиш
 const key = {
     'D': 'c',
     'F': 'd',
